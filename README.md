@@ -1,7 +1,7 @@
 # Movieflix
 > Projeto SPA Angular, para consumo de API 
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Usando Movieflix
 
 Para usar o Movieflix, siga estas etapas:
 
