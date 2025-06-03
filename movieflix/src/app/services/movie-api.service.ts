@@ -17,7 +17,7 @@ export class MovieApiService {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMWNlZjdkNjQ1YTY3YzAxNGY5MzA0NDNiN2QyMjk3ZSIsIm5iZiI6MTc0NzY5OTcyMS4xMiwic3ViIjoiNjgyYmM4MDkyOTYxMDBmZmRlNjQ5MDQxIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.50fJlUpOwcXGzus_UWd_oV0LvwlDkPfkTF3P6IBSFf0'
     }
   };
-
+ 
   bannerApiData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/trending/all/week?language=pt-br`, this.options);
   }
@@ -32,5 +32,19 @@ export class MovieApiService {
 
   popularActionMovieApiData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/discover/movie?language=pt-br&with_genres=28&sort_by=popularity.desc`, this.options);
+  }
+
+  //----------------
+
+  mediaDetails(mediaType: any, id: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${mediaType}/${id}?language=pt-br`, this.options);
+  }
+
+  mediaTrailer(mediaType: any, id: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${mediaType}/${id}/videos?language=pt-br`, this.options);
+  }
+
+  mediaCast(mediaType: any, id: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${mediaType}/${id}/credits?language=pt-br`, this.options);
   }
 }
